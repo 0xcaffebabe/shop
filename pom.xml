@@ -11,6 +11,7 @@
     <modules>
         <module>common-registry</module>
         <module>common-gateway</module>
+        <module>item</module>
     </modules>
 
     <parent>

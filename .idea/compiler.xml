@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="commonregistry" />
         <module name="commongateway" />
+        <module name="iteminterface" />
+        <module name="itemservice" />
       </profile>
     </annotationProcessing>
   </component>
@@ -15,6 +17,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="commongateway" options="-parameters" />
       <module name="commonregistry" options="-parameters" />
+      <module name="item" options="-parameters" />
+      <module name="iteminterface" options="-parameters" />
+      <module name="itemservice" options="-parameters" />
       <module name="leyou" options="-parameters" />
     </option>
   </component>
