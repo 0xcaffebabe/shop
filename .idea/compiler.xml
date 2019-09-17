@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="commonregistry" />
         <module name="commongateway" />
+        <module name="common" />
         <module name="iteminterface" />
         <module name="itemservice" />
       </profile>
@@ -15,6 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="-parameters" />
       <module name="commongateway" options="-parameters" />
       <module name="commonregistry" options="-parameters" />
       <module name="item" options="-parameters" />

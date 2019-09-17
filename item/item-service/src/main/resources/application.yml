@@ -4,7 +4,7 @@ spring:
   application:
     name: item-service
   datasource:
-    url: jdbc:mysql://localhost:3306/heima
+    url: jdbc:mysql:///shop
     username: root
     password: 123
     hikari:
@@ -20,3 +20,6 @@ eureka:
     prefer-ip-address: true
     ip-address: 127.0.0.1
     instance-id: ${spring.application.name}:${server.port}
+logging:
+  level:
+    root: debug

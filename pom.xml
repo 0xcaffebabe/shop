@@ -12,6 +12,7 @@
         <module>common-registry</module>
         <module>common-gateway</module>
         <module>item</module>
+        <module>common</module>
     </modules>
 
     <parent>
@@ -75,6 +76,12 @@
                 <artifactId>fastdfs-client</artifactId>
                 <version>${fastDFS.client.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.8</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
