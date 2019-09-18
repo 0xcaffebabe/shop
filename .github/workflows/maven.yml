@@ -13,5 +13,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
+    - name: Build gateway
       run: mvn package --file ./common-gateway/pom.xml
+    - name: Build registry
+      run: mvn package --file ./common-registry/pom.xml
+      
