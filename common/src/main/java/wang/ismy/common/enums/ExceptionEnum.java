@@ -12,7 +12,8 @@ public enum  ExceptionEnum {
     /*
     * 服务器内部错误
     * */
-    SERVER_ERROR(500,"服务器错误")
+    SERVER_ERROR(500,"服务器错误"),
+    NOT_FOUND(404,"查询不到相关内容")
     ;
 
      ExceptionEnum(int code, String msg) {

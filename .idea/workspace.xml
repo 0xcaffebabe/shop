@@ -2,25 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8e9ad18-31dc-49f4-ad80-35e9c79daa65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/advice/CommonControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/enums/ExceptionEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/exception/BusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/vo/ExceptionResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-interface/src/main/java/wang/ismy/pojo/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/ItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-gateway/src/main/java/wang/ismy/leyou/common/gateway/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/item/item-interface/src/main/java/wang/ismy/pojo/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leyou565656.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-gateway/src/main/java/wang/ismy/leyou/common/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-gateway/src/main/java/wang/ismy/leyou/common/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/enums/ExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/enums/ExceptionEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/item/item-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-interface/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item/item-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/service/ItemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/ItemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/ItemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/ItemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/ItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/service/ItemService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/item/item-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -59,6 +55,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,6 +66,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\项目\leyou" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -147,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568709878445</updated>
-      <workItem from="1568709880468" duration="12670000" />
+      <workItem from="1568709880468" duration="18479000" />
     </task>
     <servers />
   </component>
