@@ -33,6 +33,8 @@ public class BranController {
         return ResponseEntity.ok(brandService.pageQuery(page,rows,sortBy,desc,key));
     }
 
+
+
     @PostMapping
     public ResponseEntity<Void> save(Brand brand,@RequestParam("cids") List<Long> cids){
 

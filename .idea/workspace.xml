@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8e9ad18-31dc-49f4-ad80-35e9c79daa65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/vo/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-interface/src/main/java/wang/ismy/pojo/Brand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/BranController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/mapper/BrandMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/service/BrandService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/src/main/java/wang/ismy/leyou/upload/UploadApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/src/main/java/wang/ismy/leyou/upload/controller/UploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/src/main/java/wang/ismy/leyou/upload/service/UploadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upload/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload/src/main/java/wang/ismy/leyou/upload/congfig/GlobalCorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/common-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/enums/ExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/wang/ismy/common/enums/ExceptionEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item/item-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou565656.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/BranController.java" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/BranController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/item/item-service/src/main/java/wang/ismy/item/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upload/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/src/main/java/wang/ismy/leyou/upload/service/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/upload/src/main/java/wang/ismy/leyou/upload/service/UploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/upload/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +52,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/springboot-item" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -164,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568709878445</updated>
-      <workItem from="1568709880468" duration="29183000" />
+      <workItem from="1568709880468" duration="37776000" />
     </task>
     <servers />
   </component>

@@ -2,10 +2,7 @@ package wang.ismy.item.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import wang.ismy.item.service.CategoryService;
 import wang.ismy.pojo.Category;
 
@@ -28,5 +25,10 @@ public class CategoryController {
     @GetMapping("/list")
     public ResponseEntity<List<Category>> queryListByPid(@RequestParam("pid") Long pid) {
         return ResponseEntity.ok(categoryService.queryListByPid(pid));
+    }
+
+    @GetMapping("/bid/{bid}")
+    public ResponseEntity<Category> getCategoryById(@PathVariable Long bid){
+        return ResponseEntity.ok(categoryService.getCategoryById(bid));
     }
 }

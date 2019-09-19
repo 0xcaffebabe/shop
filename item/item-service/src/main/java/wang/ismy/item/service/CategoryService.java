@@ -33,4 +33,13 @@ public class CategoryService {
         }
         return list;
     }
+
+    public Category getCategoryById(Long bid) {
+        Category category = mapper.selectByPrimaryKey(bid);
+
+        if (category == null){
+            throw new BusinessException(ExceptionEnum.NOT_FOUND);
+        }
+        return category;
+    }
 }

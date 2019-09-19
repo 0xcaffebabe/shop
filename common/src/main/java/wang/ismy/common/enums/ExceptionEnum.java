@@ -14,7 +14,8 @@ public enum  ExceptionEnum {
     * */
     SERVER_ERROR(500,"服务器错误"),
     NOT_FOUND(404,"查询不到相关内容"),
-    UPLOAD_FAIL(500,"上传文件失败")
+    UPLOAD_FAIL(500,"上传文件失败"),
+    INVALID_FILE_TYPE(400,"无效的文件类型")
     ;
 
      ExceptionEnum(int code, String msg) {
