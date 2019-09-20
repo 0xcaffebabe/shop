@@ -1,9 +1,12 @@
 package wang.ismy.item.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import wang.ismy.item.service.BrandService;
 import wang.ismy.item.service.CategoryService;
+import wang.ismy.pojo.Brand;
 import wang.ismy.pojo.Category;
 
 import java.util.List;
@@ -14,13 +17,12 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("category")
+@AllArgsConstructor
 public class CategoryController {
 
     private CategoryService categoryService;
 
-    public CategoryController(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
+    private BrandService brandService;
 
     @GetMapping("/list")
     public ResponseEntity<List<Category>> queryListByPid(@RequestParam("pid") Long pid) {
@@ -28,7 +30,7 @@ public class CategoryController {
     }
 
     @GetMapping("/bid/{bid}")
-    public ResponseEntity<Category> getCategoryById(@PathVariable Long bid){
-        return ResponseEntity.ok(categoryService.getCategoryById(bid));
+    public ResponseEntity<List<Category>> getCategoryByBrand(@PathVariable Long bid){
+        return ResponseEntity.ok(categoryService.getCategoryByBrand(bid));
     }
 }

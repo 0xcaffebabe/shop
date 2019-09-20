@@ -65,6 +65,11 @@ public class BrandService {
         }
 
         // 新增中间表映射
+        createCategoryBrandRelation(brand, cids);
+
+    }
+
+    private void createCategoryBrandRelation(Brand brand, List<Long> cids) {
         for (Long cid : cids) {
             int count = mapper.insertCategoryBrand(cid, brand.getId());
 
@@ -72,6 +77,44 @@ public class BrandService {
                 throw new BusinessException(ExceptionEnum.SERVER_ERROR);
             }
         }
+    }
 
+    public Brand findById(Long bid) {
+        Brand brand = mapper.selectByPrimaryKey(bid);
+
+        if (brand == null){
+            throw new BusinessException(ExceptionEnum.NOT_FOUND);
+        }
+
+        return brand;
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void update(Brand brand, List<Long> cids) {
+
+        if (brand.getId() == null){
+            throw new BusinessException(ExceptionEnum.INVALID_DATA);
+        }
+        mapper.updateByPrimaryKey(brand);
+
+        // 修改中间表映射
+            // 删除所有中间表映射
+
+        mapper.deleteByBrand(brand.getId());
+
+            // 再插入
+        createCategoryBrandRelation(brand,cids);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void delete(Long bid) {
+
+        if (mapper.selectByPrimaryKey(bid) == null){
+            throw new BusinessException(ExceptionEnum.NOT_FOUND);
+        }
+
+        if (mapper.deleteByPrimaryKey(bid) != 1){
+            throw new BusinessException(ExceptionEnum.SERVER_ERROR);
+        }
     }
 }

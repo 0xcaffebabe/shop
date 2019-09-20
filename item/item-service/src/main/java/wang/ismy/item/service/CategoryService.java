@@ -42,4 +42,8 @@ public class CategoryService {
         }
         return category;
     }
+
+    public List<Category> getCategoryByBrand(Long bid) {
+        return mapper.getCategoryByBrand(bid);
+    }
 }
