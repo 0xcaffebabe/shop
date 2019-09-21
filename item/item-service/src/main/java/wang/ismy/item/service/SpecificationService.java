@@ -9,8 +9,8 @@ import wang.ismy.common.enums.ExceptionEnum;
 import wang.ismy.common.exception.BusinessException;
 import wang.ismy.item.mapper.SpecGroupMapper;
 import wang.ismy.item.mapper.SpecParamMapper;
-import wang.ismy.pojo.SpecGroup;
-import wang.ismy.pojo.SpecParam;
+import wang.ismy.pojo.entity.SpecGroup;
+import wang.ismy.pojo.entity.SpecParam;
 
 import java.util.List;
 
@@ -114,5 +114,18 @@ public class SpecificationService {
     public void deleteParam(Long pid) {
 
         specParamMapper.deleteByPrimaryKey(pid);
+    }
+
+    public List<SpecParam> selectParam(Long gid, Long cid, Boolean searching) {
+        SpecParam param = new SpecParam();
+        param.setGroupId(gid);
+        param.setCid(cid);
+        param.setSearching(searching);
+        List<SpecParam> list = specParamMapper.select(param);
+
+        if (CollectionUtils.isEmpty(list)){
+            throw new BusinessException(ExceptionEnum.NOT_FOUND);
+        }
+        return list;
     }
 }

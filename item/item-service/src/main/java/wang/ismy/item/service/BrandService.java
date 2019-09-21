@@ -8,11 +8,11 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 import wang.ismy.common.enums.ExceptionEnum;
+import wang.ismy.common.exception.Assertion;
 import wang.ismy.common.exception.BusinessException;
-import wang.ismy.common.vo.ExceptionResult;
 import wang.ismy.common.vo.PageResult;
 import wang.ismy.item.mapper.BrandMapper;
-import wang.ismy.pojo.Brand;
+import wang.ismy.pojo.entity.Brand;
 
 import java.util.List;
 
@@ -116,5 +116,12 @@ public class BrandService {
         if (mapper.deleteByPrimaryKey(bid) != 1){
             throw new BusinessException(ExceptionEnum.SERVER_ERROR);
         }
+    }
+
+
+    public List<Brand> getByCategory(Long cid) {
+        List<Brand> brands = mapper.selectByCategory(cid);
+        Assertion.assertNotEmpty(brands);
+        return brands;
     }
 }

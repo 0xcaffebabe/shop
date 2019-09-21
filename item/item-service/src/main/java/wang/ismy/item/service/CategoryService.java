@@ -3,9 +3,10 @@ package wang.ismy.item.service;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import wang.ismy.common.enums.ExceptionEnum;
+import wang.ismy.common.exception.Assertion;
 import wang.ismy.common.exception.BusinessException;
 import wang.ismy.item.mapper.CategoryMapper;
-import wang.ismy.pojo.Category;
+import wang.ismy.pojo.entity.Category;
 
 import java.util.List;
 
@@ -45,5 +46,11 @@ public class CategoryService {
 
     public List<Category> getCategoryByBrand(Long bid) {
         return mapper.getCategoryByBrand(bid);
+    }
+
+    public List<Category> selectByIds(List<Long> ids){
+        List<Category> categories = mapper.selectByIdList(ids);
+        Assertion.assertNotEmpty(categories);
+        return categories;
     }
 }

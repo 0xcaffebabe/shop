@@ -1,13 +1,11 @@
 package wang.ismy.item.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import wang.ismy.item.service.BrandService;
 import wang.ismy.item.service.CategoryService;
-import wang.ismy.pojo.Brand;
-import wang.ismy.pojo.Category;
+import wang.ismy.pojo.entity.Category;
 
 import java.util.List;
 

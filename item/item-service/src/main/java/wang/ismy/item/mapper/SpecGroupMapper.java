@@ -1,7 +1,7 @@
 package wang.ismy.item.mapper;
 
 import tk.mybatis.mapper.common.Mapper;
-import wang.ismy.pojo.SpecGroup;
+import wang.ismy.pojo.entity.SpecGroup;
 
 /**
  * @author MY

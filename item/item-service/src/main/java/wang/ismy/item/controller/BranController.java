@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import wang.ismy.common.vo.PageResult;
 import wang.ismy.item.service.BrandService;
-import wang.ismy.pojo.Brand;
+import wang.ismy.pojo.entity.Brand;
 
 import java.util.List;
 
@@ -33,7 +33,10 @@ public class BranController {
         return ResponseEntity.ok(brandService.pageQuery(page,rows,sortBy,desc,key));
     }
 
-
+    @GetMapping("/cid/{cid}")
+    public ResponseEntity<List<Brand>> getByCategory(@PathVariable Long cid){
+        return ResponseEntity.ok(brandService.getByCategory(cid));
+    }
 
     @PostMapping
     public ResponseEntity<Void> save(Brand brand,@RequestParam("cids") List<Long> cids){
