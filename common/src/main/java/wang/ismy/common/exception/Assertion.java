@@ -16,4 +16,10 @@ public class Assertion {
             throw new BusinessException(ExceptionEnum.NOT_FOUND);
         }
     }
+
+    public static void assertNotNull(Object obj){
+        if (obj == null){
+            throw new BusinessException(ExceptionEnum.NOT_FOUND);
+        }
+    }
 }

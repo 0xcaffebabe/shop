@@ -31,5 +31,11 @@ public class Spu {
     private List<Sku> skus;
 
     @Transient
+    private String brandName;
+
+    @Transient
+    private String categoryName;
+
+    @Transient
     private SpuDetail spuDetail;
 }

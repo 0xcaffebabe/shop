@@ -21,6 +21,7 @@ public class SpuVO {
     private Long id;
     private String brandName;
     private String categoryName;
+
     private String title;// 标题
     private String subTitle;// 子标题
     private Boolean saleable;// 是否上架
