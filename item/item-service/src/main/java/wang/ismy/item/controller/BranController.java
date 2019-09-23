@@ -59,4 +59,9 @@ public class BranController {
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Brand> queryByBrandId(@PathVariable("id") Long id){
+        return ResponseEntity.ok(brandService.findById(id));
+    }
 }

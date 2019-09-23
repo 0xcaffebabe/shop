@@ -53,4 +53,10 @@ public class CategoryService {
         Assertion.assertNotEmpty(categories);
         return categories;
     }
+
+    public List<Category> queryCategoryByIds(List<Long> ids) {
+        List<Category> categories = mapper.selectByIdList(ids);
+        Assertion.assertNotEmpty(categories);
+        return categories;
+    }
 }

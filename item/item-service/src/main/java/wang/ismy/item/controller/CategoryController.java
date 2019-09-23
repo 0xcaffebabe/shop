@@ -1,5 +1,6 @@
 package wang.ismy.item.controller;
 
+import com.mysql.fabric.Response;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +31,10 @@ public class CategoryController {
     @GetMapping("/bid/{bid}")
     public ResponseEntity<List<Category>> getCategoryByBrand(@PathVariable Long bid){
         return ResponseEntity.ok(categoryService.getCategoryByBrand(bid));
+    }
+
+    @GetMapping("list/ids")
+    public ResponseEntity<List<Category>> queryCategoryByIds(@RequestParam("ids") List<Long> ids){
+        return ResponseEntity.ok(categoryService.queryCategoryByIds(ids));
     }
 }
