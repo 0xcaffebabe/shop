@@ -15,11 +15,11 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("brand")
-public class BranController {
+public class BrandController {
 
     private BrandService brandService;
 
-    public BranController(BrandService brandService) {
+    public BrandController(BrandService brandService) {
         this.brandService = brandService;
     }
 
@@ -63,5 +63,19 @@ public class BranController {
     @GetMapping("{id}")
     public ResponseEntity<Brand> queryByBrandId(@PathVariable("id") Long id){
         return ResponseEntity.ok(brandService.findById(id));
+    }
+
+    /**
+     * 根据多个id查询品牌
+     * @param ids
+     * @return
+     */
+    @GetMapping("list")
+    public ResponseEntity<List<Brand>> queryBrandByIds(@RequestParam("ids") List<Long> ids){
+        List<Brand> list = this.brandService.queryBrandByIds(ids);
+        if(list == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(list);
     }
 }

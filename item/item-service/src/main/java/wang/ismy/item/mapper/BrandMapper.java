@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import tk.mybatis.mapper.common.Mapper;
+import wang.ismy.common.mapper.BaseMapper;
 import wang.ismy.pojo.entity.Brand;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
  * @date 2019/9/18 19:32
  */
 
-public interface BrandMapper extends Mapper<Brand> {
+public interface BrandMapper extends BaseMapper<Brand,Long> {
 
     @Insert("INSERT INTO tb_category_brand (category_id, brand_id) VALUES (#{cid},#{bid})")
     int insertCategoryBrand(@Param("cid") Long cid,@Param("bid") Long bid);

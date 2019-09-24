@@ -6,7 +6,15 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.elasticsearch.core.query.FetchSourceFilter;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
+import wang.ismy.common.enums.ExceptionEnum;
+import wang.ismy.common.exception.BusinessException;
 import wang.ismy.common.utils.JsonUtils;
 import wang.ismy.common.vo.PageResult;
 import wang.ismy.leyou.search.client.BrandClient;
@@ -15,6 +23,7 @@ import wang.ismy.leyou.search.client.GoodsClient;
 import wang.ismy.leyou.search.client.SpecificationClient;
 import wang.ismy.leyou.search.pojo.Goods;
 import wang.ismy.leyou.search.pojo.SearchRequest;
+import wang.ismy.leyou.search.repoistory.GoodsRepository;
 import wang.ismy.pojo.entity.*;
 
 import java.io.IOException;
@@ -39,7 +48,9 @@ public class SearchService {
 
     private SpecificationClient specClient;
 
-    public Goods buildGoods(Spu spu)  {
+    private GoodsRepository goodsRepository;
+
+    public Goods buildGoods(Spu spu) {
 
         Goods goods = new Goods();
 
@@ -60,7 +71,7 @@ public class SearchService {
         goods.setSkus(JsonUtils.toJSON(skuList));
         try {
             goods.setSpecs(processSpec(spu));
-        }catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -68,16 +79,16 @@ public class SearchService {
     }
 
     private String getGoodsAllName(Spu spu) {
-        String categoryName = categoryClient.queryCategoryByIds(List.of(spu.getCid1(),spu.getCid2(),spu.getCid3()))
+        String categoryName = categoryClient.queryCategoryByIds(List.of(spu.getCid1(), spu.getCid2(), spu.getCid3()))
                 .stream()
                 .map(Category::getName)
-                .reduce((s1,s2)->s1+" "+s2).get();
+                .reduce((s1, s2) -> s1 + " " + s2).get();
         Brand brand = brandClient.queryByBrandId(spu.getBrandId());
-        return categoryName+" "+brand.getName();
+        return categoryName + " " + brand.getName();
 
     }
 
-    private Map<String,Object> processSpec(Spu spu) throws IOException {
+    private Map<String, Object> processSpec(Spu spu) throws IOException {
         SpuDetail spuDetail = goodsClient.getSpuDetail(spu.getId());
         List<SpecParam> params = specClient.selectParam(null, spu.getCid3(), true);
         // 处理规格参数
@@ -94,8 +105,8 @@ public class SearchService {
             if (p.getSearching()) {
                 if (p.getGeneric()) {
                     String value = genericSpecs.get(p.getId().toString()).toString();
-                    if(p.getNumeric()){
-                        value = chooseSegment(value,p);
+                    if (p.getNumeric()) {
+                        value = chooseSegment(value, p);
                     }
                     specMap.put(p.getName(), StringUtils.isBlank(value) ? "其它" : value);
                 } else {
@@ -115,16 +126,16 @@ public class SearchService {
             // 获取数值范围
             double begin = NumberUtils.toDouble(segs[0]);
             double end = Double.MAX_VALUE;
-            if(segs.length == 2){
+            if (segs.length == 2) {
                 end = NumberUtils.toDouble(segs[1]);
             }
             // 判断是否在范围内
-            if(val >= begin && val < end){
-                if(segs.length == 1){
+            if (val >= begin && val < end) {
+                if (segs.length == 1) {
                     result = segs[0] + p.getUnit() + "以上";
-                }else if(begin == 0){
+                } else if (begin == 0) {
                     result = segs[1] + p.getUnit() + "以下";
-                }else{
+                } else {
                     result = segment + p.getUnit();
                 }
                 break;
@@ -134,9 +145,33 @@ public class SearchService {
     }
 
     public PageResult<Goods> search(SearchRequest request) {
-        Integer page = request.getPage();
+
+        if (StringUtils.isBlank(request.getKey())){
+            throw new BusinessException(ExceptionEnum.NOT_FOUND);
+        }
+
+        int page = request.getPage() - 1;
         Integer size = request.getSize();
 
+        NativeSearchQueryBuilder queryBuilder = new NativeSearchQueryBuilder();
+        // 分页
+        queryBuilder.withPageable(PageRequest.of(page, size));
 
+        // 聚合
+        String categoryAggName = "category";
+        String brandAggName = "brand";
+        queryBuilder.addAggregation(AggregationBuilders.terms(categoryAggName).field("cid3"));
+
+
+        // 过滤
+        queryBuilder.withQuery(QueryBuilders.matchQuery("all", request.getKey()));
+        queryBuilder.withSourceFilter(new FetchSourceFilter(new String[]{"id", "subTitle", "skus"}, null));
+        Page<Goods> result = goodsRepository.search(queryBuilder.build());
+
+        PageResult pageResult = new PageResult();
+        pageResult.setTotal(result.getTotalElements());
+        pageResult.setItems(result.getContent());
+
+        return pageResult;
     }
 }

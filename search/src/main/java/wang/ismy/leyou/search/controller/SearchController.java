@@ -16,7 +16,6 @@ import wang.ismy.leyou.search.service.SearchService;
  * @date 2019/9/23 22:09
  */
 @RestController
-@RequestMapping("search")
 @AllArgsConstructor
 public class SearchController {
 

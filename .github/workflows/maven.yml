@@ -14,7 +14,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Build gateway
-      run: mvn package --file ./common-gateway/pom.xml
+      run: mvn package --file ./gateway/pom.xml
     - name: Build registry
-      run: mvn package --file ./common-registry/pom.xml
+      run: mvn package --file ./registry/pom.xml
       

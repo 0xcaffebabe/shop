@@ -53,7 +53,7 @@ public class BrandService {
         PageResult<Brand> result  = new PageResult<>();
         result.setTotal(brands.getTotal());
         result.setItems(brands.getResult());
-        result.setTotalPage((long)brands.getPages());
+        result.setTotalPage(brands.getPages());
         return result;
     }
 
@@ -123,5 +123,9 @@ public class BrandService {
         List<Brand> brands = mapper.selectByCategory(cid);
         Assertion.assertNotEmpty(brands);
         return brands;
+    }
+
+    public List<Brand> queryBrandByIds(List<Long> ids) {
+        return mapper.selectByIdList(ids);
     }
 }
