@@ -81,6 +81,9 @@ public class SpecificationController {
     public ResponseEntity<Void> deleteParam(@PathVariable("pid") Long pid) {
 
         specificationService.deleteParam(pid);
+
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+
 }

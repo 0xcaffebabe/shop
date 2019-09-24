@@ -23,6 +23,7 @@ public class GoodsController {
 
     private GoodsService goodsService;
 
+    @GetMapping("/spu/page")
     public ResponseEntity<PageResult<Spu>> query(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                                    @RequestParam(value = "rows", defaultValue = "5") Integer rows,
                                                    @RequestParam(value = "salable", required = false) Boolean saleable,

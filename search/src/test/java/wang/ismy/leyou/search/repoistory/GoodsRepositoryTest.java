@@ -13,6 +13,8 @@ import wang.ismy.leyou.search.pojo.Goods;
 import wang.ismy.leyou.search.service.SearchService;
 import wang.ismy.pojo.entity.Spu;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,28 +37,33 @@ public class GoodsRepositoryTest {
     SearchService searchService;
 
     @Test
-    public void testCreateIndex(){
+    public void testCreateIndex() {
         template.createIndex(Goods.class);
         template.putMapping(Goods.class);
     }
 
     @Test
-    public void loadData(){
+    public void loadData() throws IOException {
         int page = 1;
         int rows = 200;
-        int size =0;
+        int size = 0;
         do {
             // 批量查询spu
             List<Spu> items = goodsClient.query(page, rows, true, null).getItems();
-            if (CollectionUtils.isEmpty(items)){
+            if (CollectionUtils.isEmpty(items)) {
                 break;
             }
             size = items.size();
             // 构建goods
-            List<Goods> goodsList = items.stream().map(searchService::buildGoods).collect(Collectors.toList());
+
+            List<Goods> goodsList = new ArrayList<>();
+            for (Spu item : items) {
+                goodsList.add(searchService.buildGoods(item));
+            }
+
             // 存储索引库
             goodsRepository.saveAll(goodsList);
             page++;
-        }while (size ==100);
+        } while (size == 100);
     }
 }

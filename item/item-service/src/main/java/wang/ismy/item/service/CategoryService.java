@@ -9,6 +9,7 @@ import wang.ismy.item.mapper.CategoryMapper;
 import wang.ismy.pojo.entity.Category;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author MY
@@ -58,5 +59,16 @@ public class CategoryService {
         List<Category> categories = mapper.selectByIdList(ids);
         Assertion.assertNotEmpty(categories);
         return categories;
+    }
+
+    public List<String> queryCategoryNameByIds(List<Long> ids) {
+        return mapper.selectByIdList(ids).stream().map(Category::getName).collect(Collectors.toList());
+    }
+
+    public List<Category> queryCategoryList(Long cid3) {
+        Category category = mapper.selectByPrimaryKey(cid3);
+        Category category1 = mapper.selectByPrimaryKey(category.getParentId());
+        Category category2 = mapper.selectByPrimaryKey(category1.getParentId());
+        return List.of(category2,category1,category);
     }
 }
