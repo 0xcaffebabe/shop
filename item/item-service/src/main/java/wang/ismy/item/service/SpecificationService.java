@@ -1,6 +1,7 @@
 package wang.ismy.item.service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -127,5 +128,10 @@ public class SpecificationService {
             throw new BusinessException(ExceptionEnum.NOT_FOUND);
         }
         return list;
+    }
+
+    public List<SpecGroup> querySpecsByCid(Long cid) {
+        // TODO
+        return null;
     }
 }

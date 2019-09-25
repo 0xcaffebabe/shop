@@ -23,4 +23,7 @@ public interface SpecificationApi {
 
     @GetMapping("{cid}")
     SpecParam selectByCid(@PathVariable Long cid);
+
+    @GetMapping("group/{cid}")
+    List<SpecGroup> querySpecsByCid(@PathVariable("cid") Long cid);
 }

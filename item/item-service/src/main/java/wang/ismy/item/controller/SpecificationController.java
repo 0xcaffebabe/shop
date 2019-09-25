@@ -85,5 +85,8 @@ public class SpecificationController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-
+    @GetMapping("group/{cid}")
+    public ResponseEntity<List<SpecGroup>> querySpecsByCid(@PathVariable("cid") Long cid){
+        return ResponseEntity.ok(specificationService.querySpecsByCid(cid));
+    }
 }

@@ -209,4 +209,16 @@ public class GoodsService {
         // 批量新增库存
         stockMapper.insertList(stockList);
     }
+
+    public Spu querySpuById(Long id) {
+
+        Spu spu = spuMapper.selectByPrimaryKey(id);
+
+        // 查询sku
+        spu.setSkus(getSkuList(spu.getId()));
+
+        // 查询detail
+        spu.setSpuDetail(getSpuDetail(spu.getId()));
+        return spu;
+    }
 }

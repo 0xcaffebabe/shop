@@ -36,4 +36,12 @@ public interface GoodsApi {
 
     @PutMapping("/goods")
     void updateGoogds(@RequestBody Spu spu);
+
+    /**
+     * 根据spu的id查询spu
+     * @param id
+     * @return
+     */
+    @GetMapping("spu/{id}")
+    Spu querySpuById(@PathVariable("id") Long id);
 }
