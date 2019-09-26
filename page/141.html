@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -100,13 +100,19 @@
         <div id="item">
             <div class="crumb-wrap">
                 <ul class="sui-breadcrumb">
-                    <li th:each="c: ${categories}">
-                        <a href="#" th:text="${c.name}"></a>
+                    <li>
+                        <a href="#">手机</a>
                     </li>
                     <li>
-                        <a href="#" th:text="${brand.name}"></a>
+                        <a href="#">手机通讯</a>
                     </li>
-                    <li class="active" th:text="${spu.title}">Apple iPhone 6s</li>
+                    <li>
+                        <a href="#">手机</a>
+                    </li>
+                    <li>
+                        <a href="#">小米（MI）</a>
+                    </li>
+                    <li class="active">小米 MI 6.1 手机  (更新）</li>
                 </ul>
             </div>
             <!--product-info-->
@@ -145,7 +151,7 @@
                     <div class="sku-name">
                         <h4>Apple iPhone 6s（A1700）64G玫瑰金色 移动通信电信4G手机</h4>
                     </div>
-                    <div class="news"><span th:utext="${spu.subTitle}">推荐选择下方[移动优惠购],手机套餐齐搞定,不用换号,每月还有花费返</span></div>
+                    <div class="news"><span>含原装壳丨变焦双摄丨骁龙处理器丨NFC丨<a href="https://item.jd.com/22320392453.html" target="_blank">小米note3骁龙八核处理器</a></span></div>
                     <div class="summary">
                         <div class="summary-wrap">
                             <div class="fl title"><i>价　　格</i></div>
@@ -484,7 +490,7 @@
                                 </ul>
                                 <!--商品详情-->
                                 <div class="intro-detail">
-                                    <div th:utext="${detail.description}"></div>
+                                    <div><p>haha</p><p><img src="https://img10.360buyimg.com/imgzone/jfs/t5995/1/7908464401/136614/51c2290d/5982a252N4a790bd1.jpg?t=1501733480589" height="866" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5863/213/9039750883/30306/fde5971d/5982a252Na8f28026.jpg?t=1501733480589" height="498" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5578/338/9037337052/66102/a82846a0/5982a252Nb1adfeec.jpg?t=1501733480589" height="497" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5818/56/9081857043/61584/aafbbc04/5982a245Nbe37559a.jpg?t=1501733480589" height="485" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t7018/209/1552996323/87198/5749762a/5982a249N84154f22.jpg?t=1501733480589" height="721" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5986/33/7980167593/63322/3982962e/5982a252Nd6ec5364.jpg?t=1501733480589" height="454" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5857/174/9054258605/45119/515d8509/5982a251Nbc9583a1.jpg?t=1501733572961" height="413" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t7009/205/1569901050/192865/5f953f3e/5982a252N4b6661f1.jpg?t=1501733572961" height="1254" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t6763/197/1526580639/78238/cc50506a/5982a249N05c96621.jpg?t=1501733572961" height="828" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5725/101/8989390398/102537/1dd15856/5982a252N0299a5db.jpg?t=1501733572961" height="499" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t6898/349/1546231822/177383/461d16f2/5982a244N6a3a6e5f.jpg?t=1501733572961" height="932" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5770/356/9153659851/213088/636075da/5982a252Nae801bca.jpg?t=1501733572961" height="1132" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t6985/198/1511997574/192778/248b2aef/5982a252N9241ae7f.jpg?t=1501733572961" height="1039" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5716/135/9089105362/97594/3780c3fb/5982a252N5077ed00.jpg?t=1501733572961" height="615" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5668/99/9051614277/222334/9c40e22e/5982a244N1a441128.jpg?t=1501733572961" height="1041" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t7015/220/1543840410/77449/a0371158/5982a252Nc46e18d1.jpg?t=1501733572961" height="581" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t6040/127/7935047692/156834/710ae9e0/5982a252N94b877e8.jpg?t=1501733572961" height="1042" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t6997/233/1507927618/106944/b34776e0/5982a25aN33f834e9.jpg?t=1501733572961" height="1040" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5755/27/9193565146/96849/67796937/5982a24dNf05d92bf.jpg?t=1501733572961" height="796" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5707/251/9105152749/149455/c1518586/5982a25aN585ae286.jpg?t=1501733572961" height="1029" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t7093/344/631071984/317090/33075c50/5982a257N65657a49.jpg?t=1501733572961" height="1384" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5731/334/9050019233/90211/d1592ff9/5982a25bN2acd1f9d.jpg?t=1501733572961" height="767" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t6766/246/1551505636/161499/55a52190/5982a25bN9d84e892.jpg?t=1501733572961" height="1033" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5821/337/9054326197/56345/dac5fc6c/5982a25bN47c6c423.jpg?t=1501733572961" height="780" width="750"><img src="https://img10.360buyimg.com/imgzone/jfs/t5707/302/9122975330/181932/7a3d50ab/5982a25bN5b05a771.jpg?t=1501733572961" height="1218" width="750"><img src="//img10.360buyimg.com/imgzone/jfs/t18514/185/1728309269/108473/6f836dc6/5ad57184N73cf091d.jpg?t=1523937668595" height="450" width="750"></p></div>
                                 </div>
                             </div>
                             <div id="two" class="tab-pane">
@@ -515,12 +521,12 @@
                                 </div>
                                 <div class="package-list">
                                     <h3>包装清单</h3>
-                                    <p th:text="${detail.packingList}">手机X1、快速指南X1、华为SuperCharge 充电器X1、三包凭证X1、Type-C 数字耳机X1、Type-C 数据线X1、取卡针X1、TPU保护壳X1、USB Type-C转3.5mm耳机转接线X1（备注：最终以实物为准）</p>
+                                    <p>手机*1，电源适配器*1，USB Type-C数据线*1，Type-C TO AUDIO转接线*1， 三包凭证（入门指南）*1， 插针*1、高透软胶保护套*1</p>
                                 </div>
 
                             </div>
                             <div id="three" class="tab-pane">
-                                <p th:text="${detail.afterService}">售后保障</p>
+                                <p>本产品全国联保，享受三包服务，质保期为：一年质保</p>
                             </div>
                             <div id="four" class="tab-pane">
                                 <p>商品评价</p>
@@ -697,7 +703,7 @@
 <script type="text/javascript" src="/js/plugins/jquery.jqzoom/zoom.js"></script>
 <script type="text/javascript" src="index/index.js"></script>
 
-<script th:inline="javascript">
+<script>
 
 </script>
 </body>

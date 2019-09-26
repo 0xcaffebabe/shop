@@ -1,5 +1,6 @@
 package wang.ismy.item.service;
 
+import com.fasterxml.jackson.databind.node.LongNode;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,11 @@ import wang.ismy.item.mapper.SpecParamMapper;
 import wang.ismy.pojo.entity.SpecGroup;
 import wang.ismy.pojo.entity.SpecParam;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author MY
@@ -131,7 +136,23 @@ public class SpecificationService {
     }
 
     public List<SpecGroup> querySpecsByCid(Long cid) {
-        // TODO
-        return null;
+        List<SpecGroup> specGroups = selectByCid(cid);
+
+        // 查询所有规格参数
+        List<SpecParam> specParams = selectParam(null, cid, null);
+
+        Map<Long,List<SpecParam>> map = new HashMap<>();
+
+        for (SpecParam specParam : specParams) {
+            if (CollectionUtils.isEmpty(map.get(specParam.getGroupId()))){
+                map.put(specParam.getGroupId(),new ArrayList<>());
+            }
+            map.get(specParam.getGroupId()).add(specParam);
+        }
+
+        for (SpecGroup specGroup : specGroups) {
+            specGroup.setParams(map.get(specGroup.getId()));
+        }
+        return specGroups;
     }
 }
