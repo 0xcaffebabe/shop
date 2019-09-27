@@ -340,4 +340,20 @@ public class SearchService {
 
     }
 
+    public void createOrUpdateIndex(Long spuId) {
+        Spu spu = goodsClient.querySpuById(spuId);
+        Goods goods = null;
+        try {
+            goods = buildGoods(spu);
+        } catch (IOException e) {
+            log.error("构建商品失败",e);
+            throw new RuntimeException(e);
+        }
+        log.info("更新商品的索引库:{}",goods);
+        goodsRepository.save(goods);
+    }
+
+    public void deleteIndex(Long spuId) {
+        goodsRepository.deleteById(spuId);
+    }
 }

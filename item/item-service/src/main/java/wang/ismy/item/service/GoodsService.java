@@ -3,6 +3,7 @@ package wang.ismy.item.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -47,6 +48,9 @@ public class GoodsService {
     private CategoryService categoryService;
 
     private BrandService brandService;
+
+    private AmqpTemplate amqpTemplate;
+
     public PageResult<Spu> query(Integer page, Integer rows, Boolean saleable, String key) {
         PageHelper.startPage(page,rows);
 
@@ -135,6 +139,9 @@ public class GoodsService {
         }
         // 批量新增库存
         stockMapper.insertList(stockList);
+
+        // 发送新增消息
+        amqpTemplate.convertAndSend("item.insert",spu.getId());
     }
 
     public SpuDetail getSpuDetail(Long id) {
@@ -188,6 +195,9 @@ public class GoodsService {
 
         // 更新spu详情
         this.spuDetailMapper.updateByPrimaryKeySelective(spu.getSpuDetail());
+
+        // 发送修改消息
+        amqpTemplate.convertAndSend("item.update",spu.getId());
     }
 
     private void saveSkuAndStock(List<Sku> skus, Long id) {
