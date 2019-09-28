@@ -1,0 +1,17 @@
+wang\ismy\item\service\GoodsService.class
+wang\ismy\item\mapper\SpuMapper.class
+wang\ismy\item\mapper\SpecParamMapper.class
+wang\ismy\item\mapper\SpuDetailMapper.class
+wang\ismy\item\controller\GoodsController.class
+wang\ismy\item\mapper\StockMapper.class
+wang\ismy\item\controller\CategoryController.class
+wang\ismy\item\mapper\CategoryMapper.class
+wang\ismy\item\service\SpecificationService.class
+wang\ismy\item\mapper\SpecGroupMapper.class
+wang\ismy\item\service\BrandService.class
+wang\ismy\ItemApplication.class
+wang\ismy\item\mapper\SkuMapper.class
+wang\ismy\item\service\CategoryService.class
+wang\ismy\item\controller\BrandController.class
+wang\ismy\item\controller\SpecificationController.class
+wang\ismy\item\mapper\BrandMapper.class

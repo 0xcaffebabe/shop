@@ -20,6 +20,8 @@ eureka:
     prefer-ip-address: true
     ip-address: 127.0.0.1
 
+
+
 sms:
   accessKeyId: LTAI4FfTW1n5TMkVqq4cxZbN
   accessKeySecret: 9W3T2vLaX83KMwWFi9KGkS9sNBppBW
