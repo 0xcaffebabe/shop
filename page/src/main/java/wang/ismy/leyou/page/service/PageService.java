@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
+import wang.ismy.common.utils.JsonUtils;
 import wang.ismy.leyou.page.client.BrandClient;
 import wang.ismy.leyou.page.client.CategoryClient;
 import wang.ismy.leyou.page.client.GoodsClient;
@@ -74,6 +75,9 @@ public class PageService {
             map.put("categories", categories);
             map.put("groups", specGroups);
             map.put("params", paramMap);
+            Map<String, String> someMap = JsonUtils.parseMap(spuDetail.getSpecialSpec(), String.class, String.class);
+            map.put("specialParamName",someMap.keySet());
+            map.put("specialParamValue",someMap.values());
             return map;
         } catch (Exception e) {
             log.error("加载商品数据出错,spuId:{}", id);

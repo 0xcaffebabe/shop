@@ -22,6 +22,7 @@ zuul:
     search-service: /search/**
     user-service: /user/**
     auth-service: /auth/**
+    cart-service: /cart/**
     upload-service:
       path: /upload/**
       serviceId: upload-service
@@ -41,3 +42,20 @@ hystrix:
         isolation:
           thread:
             timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+
+shop:
+  jwt:
+    secret: shop@Login(Auth}*^31)&ismy% # 登录校验的密钥
+    pubKeyPath: D:/rsa.pub # 公钥地址
+    priKeyPath: D:/rsa.pri # 私钥地址
+    expire: 30 # 过期时间,单位分钟
+    cookieName: SHOP_TOKEN
+    cookieMaxAge: 30
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item

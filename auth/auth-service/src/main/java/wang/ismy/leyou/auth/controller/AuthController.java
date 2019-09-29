@@ -48,7 +48,8 @@ public class AuthController {
     }
 
     @GetMapping("verify")
-    public ResponseEntity<UserInfo> verify(@CookieValue("SHOP_TOKEN") String token){
+    public ResponseEntity<UserInfo> verify(@CookieValue("SHOP_TOKEN") String token,HttpServletRequest request,
+                                           HttpServletResponse response){
         if (StringUtils.isEmpty(token)){
             throw new BusinessException(ExceptionEnum.UNAUTHORIZED);
         }
@@ -56,6 +57,11 @@ public class AuthController {
         // 解析token
         try {
             UserInfo userInfo = JwtUtils.getInfoFromToken(token, prop.getPublicKey());
+
+            // 生成新token，写入cookie
+            String newToken = JwtUtils.generateToken(userInfo, prop.getPrivateKey(),prop.getExpire());
+            CookieUtils.setCookie(request, response, prop.getCookieName(),
+                    newToken, prop.getCookieMaxAge(), true);
             return ResponseEntity.ok(userInfo);
         } catch (Exception e) {
             throw new BusinessException(ExceptionEnum.UNAUTHORIZED);

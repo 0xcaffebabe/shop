@@ -1,2 +1,5 @@
+D:\项目\leyou\gateway\src\main\java\wang\ismy\leyou\common\gateway\filter\AuthFilter.java
 D:\项目\leyou\gateway\src\main\java\wang\ismy\leyou\common\gateway\GatewayApplication.java
 D:\项目\leyou\gateway\src\main\java\wang\ismy\leyou\common\gateway\config\CorsConfig.java
+D:\项目\leyou\gateway\src\main\java\wang\ismy\leyou\common\gateway\config\FilterProperties.java
+D:\项目\leyou\gateway\src\main\java\wang\ismy\leyou\common\gateway\config\JwtProperties.java
