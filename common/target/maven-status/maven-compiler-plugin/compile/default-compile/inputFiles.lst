@@ -1,9 +1,11 @@
 D:\项目\leyou\common\src\main\java\wang\ismy\common\mapper\BaseMapper.java
+D:\项目\leyou\common\src\main\java\wang\ismy\common\utils\CodecUtils.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\utils\NumberUtils.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\advice\CommonControllerAdvice.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\vo\PageResult.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\vo\ExceptionResult.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\exception\Assertion.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\exception\BusinessException.java
+D:\项目\leyou\common\src\main\java\wang\ismy\common\utils\CookieUtils.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\utils\JsonUtils.java
 D:\项目\leyou\common\src\main\java\wang\ismy\common\enums\ExceptionEnum.java

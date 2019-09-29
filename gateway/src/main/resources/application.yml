@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: api-gateway
+  main:
+    allow-bean-definition-overriding: true
 eureka:
   client:
     service-url:
@@ -18,10 +20,14 @@ zuul:
   routes:
     item-service: /item/**
     search-service: /search/**
+    user-service: /user/**
+    auth-service: /auth/**
     upload-service:
       path: /upload/**
       serviceId: upload-service
       strip-prefix: false
+  add-host-header: true
+  sensitive-headers:
 ribbon:
   ConnectTimeout: 250 # 连接超时时间(ms)
   ReadTimeout: 2000 # 通信超时时间(ms)

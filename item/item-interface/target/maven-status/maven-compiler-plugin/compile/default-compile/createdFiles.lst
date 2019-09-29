@@ -1,0 +1,14 @@
+wang\ismy\api\BrandApi.class
+wang\ismy\pojo\entity\Sku.class
+wang\ismy\pojo\entity\Item.class
+wang\ismy\pojo\entity\SpecGroup.class
+wang\ismy\pojo\vo\SpuVO.class
+wang\ismy\pojo\entity\Stock.class
+wang\ismy\api\GoodsApi.class
+wang\ismy\pojo\entity\Category.class
+wang\ismy\pojo\entity\Spu.class
+wang\ismy\pojo\entity\SpuDetail.class
+wang\ismy\api\SpecificationApi.class
+wang\ismy\api\CategoryApi.class
+wang\ismy\pojo\entity\Brand.class
+wang\ismy\pojo\entity\SpecParam.class

@@ -66,4 +66,12 @@
 
 通过消息队列异步进行发送
 
+## 授权中心
+
+![](https://gitee.com/caffebabee/leyou/raw/master/day17-%E6%8E%88%E6%9D%83%E4%B8%AD%E5%BF%83/assets/1527300483893.png)
+
+![](https://gitee.com/caffebabee/leyou/raw/master/day17-%E6%8E%88%E6%9D%83%E4%B8%AD%E5%BF%83/assets/1527312464328.png)
+
+
+
 
