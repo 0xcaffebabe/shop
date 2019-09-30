@@ -48,7 +48,8 @@ public class CartService {
         UserInfo userInfo = UserInterceptor.getUserInfo();
         String key = PREFIX + userInfo.getId();
 
-        var operations = redisTemplate.boundHashOps(key);
+        BoundHashOperations<String, Object, Object> operations = redisTemplate.boundHashOps(key);
+
 
         List<Object> values = operations.values();
         Assertion.assertNotEmpty(values);
