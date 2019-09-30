@@ -21,4 +21,4 @@ shop:
     priKeyPath: D:/rsa.pri # 私钥地址
     expire: 30 # 过期时间,单位分钟
     cookieName: SHOP_TOKEN
-    cookieMaxAge: 30
+    cookieMaxAge: 3600
