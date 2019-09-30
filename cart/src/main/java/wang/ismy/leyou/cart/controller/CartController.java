@@ -36,4 +36,10 @@ public class CartController {
         cartService.modifyNum(id,num);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @DeleteMapping("{skuId}")
+    public ResponseEntity<Void> delete(@PathVariable String skuId){
+        cartService.delete(skuId);
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+    }
 }
