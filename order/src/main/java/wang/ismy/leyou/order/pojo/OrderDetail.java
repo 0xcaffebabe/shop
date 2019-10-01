@@ -1,5 +1,7 @@
 package wang.ismy.leyou.order.pojo;
 
+import lombok.Data;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,6 +12,7 @@ import javax.persistence.Table;
  * @date 2019/9/30 19:56
  */
 @Table(name = "tb_order_detail")
+@Data
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +41,7 @@ public class OrderDetail {
     /**
      * 商品单价
      */
-    private Double price;
+    private Long price;
 
     /**
      * 商品规格数据

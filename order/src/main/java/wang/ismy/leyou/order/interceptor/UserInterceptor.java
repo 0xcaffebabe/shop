@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @AllArgsConstructor
 @Slf4j
 @EnableConfigurationProperties(JwtProperties.class)
-public class OrderInterceptor implements HandlerInterceptor {
+public class UserInterceptor implements HandlerInterceptor {
 
     private JwtProperties prop;
 

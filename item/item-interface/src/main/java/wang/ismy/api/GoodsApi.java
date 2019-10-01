@@ -1,8 +1,8 @@
 package wang.ismy.api;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import wang.ismy.common.vo.PageResult;
+import wang.ismy.common.dto.CartDTO;
 import wang.ismy.pojo.entity.Sku;
 import wang.ismy.pojo.entity.Spu;
 import wang.ismy.pojo.entity.SpuDetail;
@@ -44,4 +44,10 @@ public interface GoodsApi {
      */
     @GetMapping("spu/{id}")
     Spu querySpuById(@PathVariable("id") Long id);
+
+    @GetMapping("sku/list/all")
+    List<Sku> querySkuListByIdList(@RequestParam("ids") List<Long> idList);
+
+    @PostMapping("stock/decrease")
+    void decreaseStock(@RequestBody List<CartDTO> carts);
 }

@@ -3,6 +3,7 @@ package wang.ismy.leyou.order.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import wang.ismy.common.dto.CartDTO;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;

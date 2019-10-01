@@ -1,5 +1,7 @@
 package wang.ismy.leyou.order.pojo;
 
+import lombok.Data;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
@@ -9,6 +11,7 @@ import java.time.LocalDateTime;
  * @date 2019/9/30 19:57
  */
 @Table(name = "tb_order_status")
+@Data
 public class OrderStatus {
     @Id
     private Long orderId;

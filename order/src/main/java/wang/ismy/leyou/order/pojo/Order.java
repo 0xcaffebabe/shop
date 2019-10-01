@@ -1,5 +1,7 @@
 package wang.ismy.leyou.order.pojo;
 
+import lombok.Data;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -13,6 +15,7 @@ import java.util.List;
  * @date 2019/9/30 19:55
  */
 @Table(name = "tb_order")
+@Data
 public class Order {
     @Id
     private Long orderId;
@@ -21,12 +24,12 @@ public class Order {
      * 总金额
      */
     @NotNull
-    private Double totalPay;
+    private Long totalPay;
     /**
      * 实付金额
      */
     @NotNull
-    private Double actualPay;
+    private Long actualPay;
 
     /**
      * 支付类型，1、在线支付，2、货到付款
@@ -42,7 +45,7 @@ public class Order {
     /**
      * 邮费
      */
-    private String postFee;
+    private Long postFee = 0L;
 
     /**
      * 创建时间
@@ -128,5 +131,5 @@ public class Order {
     private List<OrderDetail> orderDetails;
 
     @Transient
-    private Integer status;
+    private OrderStatus status;
 }

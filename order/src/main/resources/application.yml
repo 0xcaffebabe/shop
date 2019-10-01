@@ -27,4 +27,7 @@ shop:
     expire: 30 # 过期时间,单位分钟
     cookieName: SHOP_TOKEN
     cookieMaxAge: 30
+  worker:
+    workeId: 1
+    datacenterId: 1
 

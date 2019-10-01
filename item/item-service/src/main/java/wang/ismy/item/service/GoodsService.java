@@ -13,6 +13,7 @@ import wang.ismy.common.enums.ExceptionEnum;
 import wang.ismy.common.exception.Assertion;
 import wang.ismy.common.exception.BusinessException;
 import wang.ismy.common.vo.PageResult;
+import wang.ismy.common.dto.CartDTO;
 import wang.ismy.item.mapper.SkuMapper;
 import wang.ismy.item.mapper.SpuDetailMapper;
 import wang.ismy.item.mapper.SpuMapper;
@@ -20,13 +21,10 @@ import wang.ismy.item.mapper.StockMapper;
 import wang.ismy.pojo.entity.*;
 import wang.ismy.pojo.vo.SpuVO;
 
-import javax.sound.midi.Soundbank;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -230,5 +228,19 @@ public class GoodsService {
         // 查询detail
         spu.setSpuDetail(getSpuDetail(spu.getId()));
         return spu;
+    }
+
+    public List<Sku> querySkuListByIdList(List<Long> idList) {
+        return skuMapper.selectByIdList(idList);
+    }
+
+    public void decreaseStock(List<CartDTO> carts) {
+
+        for (CartDTO cart : carts) {
+            int decrease = stockMapper.decrease(cart.getSkuId(), cart.getNum());
+            if (decrease != 1){
+                throw new BusinessException(ExceptionEnum.SERVER_ERROR);
+            }
+        }
     }
 }
