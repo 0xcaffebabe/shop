@@ -84,6 +84,10 @@
 
 ![](https://gitee.com/caffebabee/leyou/raw/master/day19-%E4%B8%8B%E5%8D%95/assets/1528729105237.png)
 
+- 微信支付
+
+![](https://pay.weixin.qq.com/wiki/doc/api/img/chapter6_5_1.png)
+
 
 
 
